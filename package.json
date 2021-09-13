@@ -1,0 +1,24 @@
+{
+  "name": "api-based-capstone",
+  "version": "1.0.0",
+  "description": "API-based webApplication that displays a list of characters from the tv-show Rick &amp; Morty.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alef-garrido/API-based-capstone.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alef-garrido/API-based-capstone/issues"
+  },
+  "homepage": "https://github.com/alef-garrido/API-based-capstone#readme",
+  "devDependencies": {
+    "webpack": "^5.52.1",
+    "webpack-cli": "^4.8.0"
+  }
+}
