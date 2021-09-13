@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/alef-garrido/API-based-capstone#readme",
   "devDependencies": {
+    "html-webpack-plugin": "^5.3.2",
     "webpack": "^5.52.1",
     "webpack-cli": "^4.8.0"
   }
