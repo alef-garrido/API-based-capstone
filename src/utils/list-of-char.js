@@ -1,6 +1,6 @@
 const listOfChar = document.getElementById('list-of-char');
 
-const renderCharacters = () => {
+const renderCharacters = async () => {
   fetch('https://rickandmortyapi.com/api/character', {
     method: 'GET',
   }).then((resp) => resp.json())
