@@ -1,3 +1,3 @@
 import './style.css';
 
-() => { return console.log('Running')}
+() => console.log('Running');
