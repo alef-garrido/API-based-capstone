@@ -1,3 +1,4 @@
 import './style.css';
 
-() => console.log('Running');
+// eslint-disable-next-line no-console
+console.log('Running');
