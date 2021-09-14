@@ -1,3 +1,4 @@
 import './style.css';
+import renderLogo from './utils/nav';
 
-() => { return console.log('Running')}
+renderLogo();
