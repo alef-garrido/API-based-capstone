@@ -103,6 +103,10 @@ nav > div {
   margin: 0 2em;
 }
 
+.clickable {
+  cursor: pointer;
+}
+
 /* List of characters */
 #container-list {
   margin-bottom: 170px;
