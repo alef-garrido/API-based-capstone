@@ -74,3 +74,31 @@ select {
 }
 
 /* END of resets */
+
+nav > div {
+  display: flex;
+  margin: 2em 0;
+}
+
+#navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#pageLogo {
+  margin: 0 2em;
+}
+
+#pages {
+  padding: 0;
+  margin: 0 2em;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-around;
+}
+
+#pages > li {
+  margin: 0 2em;
+}
