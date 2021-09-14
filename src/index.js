@@ -5,4 +5,3 @@ import renderLogo from './utils/nav';
 console.log('Running');
 
 renderLogo();
-
