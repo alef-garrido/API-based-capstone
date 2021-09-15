@@ -75,7 +75,6 @@ select {
 
 /* END of resets */
 
-
 nav > div {
   display: flex;
   margin: 2em 0;
@@ -101,6 +100,10 @@ nav > div {
   align-content: space-around;
 }
 
+.charSpecs > li {
+  margin: 0.25em 0.5em;
+}
+
 #pages > li {
   margin: 0 2em;
 }
@@ -124,22 +127,24 @@ nav > div {
   box-shadow: 10px 5px 5px rgb(94, 94, 94);
 }
 
-.hide{
+.hide {
   display: none;
 }
 
-#modal{
+#modal {
   width: 100%;
   height: 100%;
   position: fixed;
-  top: 0px;
-  left: 0px;
+  top: 0;
+  left: 0;
   background: rgba(0, 0, 0, 0.83);
+
   /* background-image: url(./assets/PNG/backgroundModal.png);
   background-repeat: no-repeat;
   background-position: 45%,0%;
   background-size: 60%; */
 }
+
 #modalMain {
   width: 30%;
   height: 90%;
@@ -150,20 +155,21 @@ nav > div {
   align-items: center;
   color: #19f0de;
   background: rgba(78, 182, 4, 0.72);
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2), inset 0px 1px 4px rgba(165, 232, 53, 0.73), inset 0px 20px 40px rgba(255, 255, 255, 0.25), inset 0px -4px 4px rgba(255, 255, 255, 0.25), inset 0px -40px 20px rgba(0, 0, 0, 0.2), inset 0px 4px 12px rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2), inset 0 1px 4px rgba(165, 232, 53, 0.73), inset 0 20px 40px rgba(255, 255, 255, 0.25), inset 0 -4px 4px rgba(255, 255, 255, 0.25), inset 0 -40px 20px rgba(0, 0, 0, 0.2), inset 0 4px 12px rgba(255, 255, 255, 0.4);
   backdrop-filter: blur(40px);
-  
+
   /* Note: backdrop-filter has minimal browser support */
   border-radius: 3px;
 }
-#modalMain > ul  {
+
+#modalMain > ul {
   list-style: none;
 }
 
 .modalImg {
   width: 300px;
   height: auto;
-  margin: 1em;  
+  margin: 1em;
 }
 
 .closeBtn {
@@ -171,7 +177,7 @@ nav > div {
   width: 30px;
   height: 30px;
   background-color: transparent;
-  color: #0DB6A2;
+  color: #0db6a2;
   font-family: sans-serif;
   font-size: 16px;
   font-weight: bold;
@@ -179,6 +185,7 @@ nav > div {
   cursor: pointer;
   align-self: flex-end;
 }
+
 .charSpecs {
   margin: 1em;
   width: 90%;
@@ -186,9 +193,7 @@ nav > div {
   flex-wrap: wrap;
   justify-content: space-around;
 }
-.charSpecs > li {
-  margin: .25em .5em;
-}
+
 
 /* footer */
 footer {

@@ -1,3 +1,4 @@
+/* eslint-disable no-use-before-define */
 import myRequestGet from './fetchData';
 
 const APIurl = 'https://rickandmortyapi.com/api/character/';
@@ -14,7 +15,7 @@ const APIurl = 'https://rickandmortyapi.com/api/character/';
 //       <li>Origin: ${value[0].name}</li>
 //     </ul>
 //    </div>
-//  </div>   
+//  </div>
 // `
 
 const renderModal = (id) => {
@@ -34,31 +35,29 @@ const renderModal = (id) => {
         </ul>
        </div>
      </div>   
-    `)
-    closeBtn(); 
+    `);
+    closeBtn();
   });
-} 
+};
 
-const closeBtn = () => { 
-  const btn = document.getElementById('modal')
+const closeBtn = () => {
+  const btn = document.getElementById('modal');
   btn.addEventListener('click', (e) => {
     if (e.target.classList.contains('closeBtn')) {
-      const modal = document.querySelector('#modal')
-      modal.classList.toggle('hide')
+      const modal = document.querySelector('#modal');
+      modal.classList.toggle('hide');
     }
-  })
-}
+  });
+};
 
 const commentEvent = () => {
-  const commentsBtns = document.getElementById('list-of-char')
+  const commentsBtns = document.getElementById('list-of-char');
   commentsBtns.addEventListener('click', (e) => {
-    if(e.target.classList.contains('elementDisplay')) {
-      const id = e.target.parentElement.parentElement.id;
-      renderModal(id); 
-      
+    if (e.target.classList.contains('elementDisplay')) {
+      const { id } = e.target.parentElement.parentElement;
+      renderModal(id);
     }
-  })
-}  
+  });
+};
 
-
-export default commentEvent
+export default commentEvent;
