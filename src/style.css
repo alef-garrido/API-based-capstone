@@ -75,6 +75,11 @@ select {
 
 /* END of resets */
 
+nav {
+  display: flex;
+  flex-direction: row;
+}
+
 nav > div {
   display: flex;
   margin: 2em 0;
