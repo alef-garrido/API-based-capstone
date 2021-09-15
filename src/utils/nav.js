@@ -1,4 +1,4 @@
-const pageLogo = require('../assets/svg/Rick-Logo.png');
+const pageLogo = require('../assets/PNG/Rick-Logo.png');
 
 const renderLogo = () => {
   const container = document.getElementById('pageLogo');
