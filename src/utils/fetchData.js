@@ -24,4 +24,24 @@ export default class myRequestGet {
       console.error(err);
     }
   }
-}
+
+  static postComment = (url, itemID, user, comment) => {
+    const commentData = await fetch(url, {
+      method: 'POST',
+      body: JSON.stringify({
+        "item_id": itemID,
+        "username": user,
+        "comment": comment
+      }),
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+    })
+        .then((res) => res.json())
+        .then((json) => console.log(json));
+
+    } catch (err) {
+      console.error(err);
+    }
+
+  }
