@@ -127,6 +127,63 @@ nav > div {
   box-shadow: 10px 5px 5px rgb(94, 94, 94);
 }
 
+.hide{
+  display: none;
+}
+
+#modal{
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background: rgba(24, 228, 5, 0.6);
+}
+#modalMain {
+  background-color: rgba(213, 235, 19, 0.644);
+  width: 60%;
+  height: 90%;
+  margin: 60px auto;
+  padding: 1em;
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#modalMain > ul  {
+  list-style: none;
+}
+.modalImg {
+  width: 300px;
+  height: auto;
+  margin: 1em;
+  
+}
+#closeBtn {
+  /* margin: 60px; */
+  width: 30px;
+  height: 30px;
+  background-color: lightgray;
+  font-family: sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 100px;
+  cursor: pointer;
+  align-self: flex-end;
+}
+.charSpecs {
+  margin: 1em;
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.charSpecs > li {
+  margin: .25em .5em;
+}
+
+
+
 /* footer */
 footer {
   background-color: rgb(0, 0, 0);
