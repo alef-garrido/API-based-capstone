@@ -1,5 +1,9 @@
 /* eslint-disable consistent-return */
 export default class myRequestGet {
+  constructor () {
+    this.IdUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/KUcXNh15Xp4XOwHZwJel'
+  }
+
    static getAll = async (url, member = null) => {
      try {
        const charsData = await fetch(url)
@@ -24,24 +28,6 @@ export default class myRequestGet {
       console.error(err);
     }
   }
+  
 
-  static postComment = (url, itemID, user, comment) => {
-    const commentData = await fetch(url, {
-      method: 'POST',
-      body: JSON.stringify({
-        "item_id": itemID,
-        "username": user,
-        "comment": comment
-      }),
-      headers: {
-        'Content-type': 'application/json; charset=UTF-8',
-      },
-    })
-        .then((res) => res.json())
-        .then((json) => console.log(json));
-
-    } catch (err) {
-      console.error(err);
-    }
-
-  }
+}

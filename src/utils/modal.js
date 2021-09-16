@@ -3,7 +3,7 @@ import myRequestGet from './fetchData';
 
 const APIurl = 'https://rickandmortyapi.com/api/character/';
 const invAPIurl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/'
-const uid = ''
+
 
 const renderModal = (id) => {
   myRequestGet.getOne(`${APIurl}${id}`).then((value) => {
@@ -25,7 +25,7 @@ const renderModal = (id) => {
     `);
     closeBtn();
   });
-  myRequestGet(`${invAPIurl}${uid}/comments`)
+ 
 };
 
 const closeBtn = () => {
@@ -37,6 +37,9 @@ const closeBtn = () => {
     }
   });
 };
+
+const appID = myRequestGet.createAppId(invAPIurl)
+
 
 const commentEvent = () => {
   const commentsBtns = document.getElementById('list-of-char');
