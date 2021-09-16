@@ -3,7 +3,6 @@ import myRequestGet from './fetchData';
 
 const APIurl = 'https://rickandmortyapi.com/api/character/';
 
-
 const renderModal = (id) => {
   myRequestGet.getOne(`${APIurl}${id}`).then((value) => {
     document.body.insertAdjacentHTML('afterbegin', `
@@ -39,7 +38,6 @@ const renderModal = (id) => {
     populateComments(`${value.id}`);
     postComment();
   });
- 
 };
 
 const closeBtn = () => {
@@ -54,43 +52,41 @@ const closeBtn = () => {
 
 const populateComments = (id) => {
   myRequestGet.getComments(id).then((value) => {
-    console.log(value)
+    console.log(value);
     if (value.length >= 1) {
-      value.forEach(element => {
-        const ul = document.querySelector('#myComments')
-        const li = document.createElement('li')
-        li.innerHTML = `${element.creation_date} ${element.username}: ${element.comment}`
-        ul.appendChild(li)
-      }); 
-    } else if (value.error.status >= 400 ) {
-      const ul = document.querySelector('#myComments')
-      const li = document.createElement('li')
-      li.textContent = 'Be the first one to comment!'
-      ul.appendChild(li)
+      value.forEach((element) => {
+        const ul = document.querySelector('#myComments');
+        const li = document.createElement('li');
+        li.innerHTML = `${element.creation_date} ${element.username}: ${element.comment}`;
+        ul.appendChild(li);
+      });
+    } else if (value.error.status >= 400) {
+      const ul = document.querySelector('#myComments');
+      const li = document.createElement('li');
+      li.textContent = 'Be the first one to comment!';
+      ul.appendChild(li);
     }
-  })
-
-}
+  });
+};
 
 const postComment = () => {
-  const form = document.getElementById('addComment')
+  const form = document.getElementById('addComment');
   form.addEventListener('submit', (e) => {
-    e.preventDefault()
-    let id = e.target.parentElement.id
-    let user = e.target.elements.user.value
-    let body = e.target.elements.comment.value
-    myRequestGet.postComments(id, user, body)
-    e.target.elements.user.value = ''
-    e.target.elements.comment.value = ''
-    updateCommentList(id)
-  })  
-}
+    e.preventDefault();
+    const { id } = e.target.parentElement;
+    const user = e.target.elements.user.value;
+    const body = e.target.elements.comment.value;
+    myRequestGet.postComments(id, user, body);
+    e.target.elements.user.value = '';
+    e.target.elements.comment.value = '';
+    updateCommentList(id);
+  });
+};
 
 const updateCommentList = (id) => {
-  document.querySelector('#myComments').innerHTML = ''
-  populateComments(id)
-}
-
+  document.querySelector('#myComments').innerHTML = '';
+  populateComments(id);
+};
 
 const commentEvent = () => {
   const commentsBtns = document.getElementById('list-of-char');
