@@ -20,11 +20,12 @@ const renderModal = (id) => {
           <li>Location: ${value.location.name}</li>
         </ul>
         <section>
-          <p>Comments</p>
+          <h5>Comments</h5>
           <ul id='myComments' role='list'>
           </ul>
         </section>
         <div id=${value.id}>
+          <h5>Post a comment</h5>
           <form id="addComment">
             <input type="text" name="user" placeholder="Your name" required>
             <textarea name="comment" id="commentBody" cols="30" rows="10" placeholder="Do you like it?" required></textarea>
@@ -35,7 +36,7 @@ const renderModal = (id) => {
      </div>   
     `);
     closeBtn();
-    renderComments(`${value.id}`);
+    populateComments(`${value.id}`);
     postComent();
   });
  
@@ -49,18 +50,6 @@ const closeBtn = () => {
       modal.classList.toggle('hide');
     }
   });
-};
-
-const renderComments = (id) => {
-  const container = document.getElementById('modalMain')
-  container.insertAdjacentHTML('beforeend', `
-    <div>
-      <p>Comments</p>
-      <ul id='myComments'>
-      </ul>
-    </div>
-  `)
-  populateComments(id);
 };
 
 const populateComments = (id) => {
