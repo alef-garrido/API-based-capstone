@@ -54,16 +54,18 @@ const closeBtn = () => {
 
 const populateComments = (id) => {
   myRequestGet.getComments(id).then((value) => {
-    let commentsCount = value.length;
+    // display title
+    const commentsCount = value.length;
     const ul = document.querySelector('#myComments');
     const title = document.createElement('h5');
-    if(commentsCount === undefined) {
-      title.textContent = `Comments (0)`
-      ul.insertAdjacentElement('beforebegin', title)
+    if (commentsCount === undefined) {
+      title.textContent = 'Comments (0)';
+      ul.insertAdjacentElement('beforebegin', title);
     } else {
-      title.textContent = `Comments (${commentsCount})`
-      ul.insertAdjacentElement('beforebegin', title)
+      title.textContent = `Comments (${commentsCount})`;
+      ul.insertAdjacentElement('beforebegin', title);
     }
+    //display comments list
     if (value.length >= 1) {
       value.forEach((element) => {
         const li = document.createElement('li');
