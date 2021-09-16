@@ -1,8 +1,10 @@
 /* eslint-disable consistent-return */
 export default class myRequestGet {
   constructor() {
+
     this.appID = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/KUcXNh15Xp4XOwHZwJel/';
     this.submitComment = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/KUcXNh15Xp4XOwHZwJel/comments';
+
   }
 
    static getAll = async (url, member = null) => {
@@ -49,4 +51,33 @@ export default class myRequestGet {
       },
     });
   }
+
+  static getLikes = async (url) => {
+    try {
+      const charsData = await fetch(url)
+        .then((res) => res.json())
+        .then((data) => data);
+
+      return charsData;
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
+  static postLike = async (url, charId) => {
+    try {
+      return await fetch(url, {
+        method: 'POST',
+        body: JSON.stringify({
+          item_id: charId,
+        }),
+        headers: {
+          'Content-type': 'application/json; charset=UTF-8',
+        },
+      });
+    } catch (err) {
+      console.error(err);
+    }
+  }
 }
+
