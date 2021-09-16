@@ -1,6 +1,5 @@
 /* eslint-disable consistent-return */
 export default class myRequestGet {
-
   static getAll = async (url, member = null) => {
     try {
       const charsData = await fetch(url)
