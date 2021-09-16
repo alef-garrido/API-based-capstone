@@ -21,7 +21,6 @@ const renderModal = (id) => {
           <li>Location: ${value.location.name}</li>
         </ul>
         <section>
-          <h5>Comments</h5>
           <ul id='myComments' role='list'>
           </ul>
         </section>
@@ -55,9 +54,22 @@ const closeBtn = () => {
 
 const populateComments = (id) => {
   myRequestGet.getComments(id).then((value) => {
+    // display title
+    const ul = document.querySelector('#myComments');
+    const commentsCount = value.length;
+    const title = document.createElement('h5');
+    if (commentsCount === undefined) {
+      title.textContent = 'Comments (0)';
+      ul.insertAdjacentElement('afterbegin', title);
+    } else {
+      title.textContent = `Comments (${commentsCount})`;
+      ul.insertAdjacentElement('afterbegin', title);
+    }
+
+    // display comments list
+
     if (value.length >= 1) {
       value.forEach((element) => {
-        const ul = document.querySelector('#myComments');
         const li = document.createElement('li');
         li.innerHTML = `${element.creation_date} ${element.username}: ${element.comment}`;
         ul.appendChild(li);
