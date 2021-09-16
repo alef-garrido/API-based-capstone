@@ -1,9 +1,5 @@
 /* eslint-disable consistent-return */
 export default class myRequestGet {
-  constructor() {
-    this.IdUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/KUcXNh15Xp4XOwHZwJel';
-  }
-
    static getAll = async (url, member = null) => {
      try {
        const charsData = await fetch(url)
