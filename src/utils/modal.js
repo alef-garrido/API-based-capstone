@@ -52,29 +52,24 @@ const closeBtn = () => {
   });
 };
 
-const commentCounter = async  (id) => {
-   await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/KUcXNh15Xp4XOwHZwJel/comments?item_id=${id}`)
-  .then(res => res.text())
-  .then(data => {
-    const count = JSON.parse(data).length
+const commentCounter = (arr) => {
+    const count = arr.length
     const ul = document.querySelector('#myComments');
     const title = document.createElement('h5');
-    if (commentsCount === undefined) {
+    if (arr === undefined) {
       title.textContent = 'Comments (0)';
       ul.insertAdjacentElement('afterbegin', title);
     } else {
       title.textContent = `Comments (${count})`;
       ul.insertAdjacentElement('afterbegin', title);
-    }
-  })
-  
+  }
+  return count
 }
 
 const populateComments = (id) => {
-  console.log(commentCounter(id))
-  const commentsCount = commentCounter(id)
+  const ul = document.querySelector('#myComments');
   myRequestGet.getComments(id).then((value) => {
-
+    commentCounter(value)
     if (value.length >= 1) {
       value.forEach((element) => {
         const li = document.createElement('li');
@@ -121,4 +116,4 @@ const commentEvent = () => {
   });
 };
 
-export default commentEvent;
+export { commentEvent, commentCounter };
