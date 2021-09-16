@@ -157,7 +157,7 @@ nav > div {
   background: rgba(78, 182, 4, 0.72);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2), inset 0 1px 4px rgba(165, 232, 53, 0.73), inset 0 20px 40px rgba(255, 255, 255, 0.25), inset 0 -4px 4px rgba(255, 255, 255, 0.25), inset 0 -40px 20px rgba(0, 0, 0, 0.2), inset 0 4px 12px rgba(255, 255, 255, 0.4);
   backdrop-filter: blur(40px);
-
+  overflow: scroll;
   /* Note: backdrop-filter has minimal browser support */
   border-radius: 3px;
 }

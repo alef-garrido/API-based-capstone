@@ -2,7 +2,6 @@
 import myRequestGet from './fetchData';
 
 const APIurl = 'https://rickandmortyapi.com/api/character/';
-const invAPIurl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/'
 
 
 const renderModal = (id) => {
@@ -20,10 +19,24 @@ const renderModal = (id) => {
           <li>Origin: ${value.origin.name}</li>
           <li>Location: ${value.location.name}</li>
         </ul>
+        <section>
+          <p>Comments</p>
+          <ul id='myComments' role='list'>
+          </ul>
+        </section>
+        <div id=${value.id}>
+          <form id="addComment">
+            <input type="text" name="user" placeholder="Your name" required>
+            <textarea name="comment" id="commentBody" cols="30" rows="10" placeholder="Do you like it?" required></textarea>
+            <input type="submit" value="Send">
+            </form>
+        </div>
        </div>
      </div>   
     `);
     closeBtn();
+    renderComments(`${value.id}`);
+    postComent();
   });
  
 };
@@ -38,7 +51,51 @@ const closeBtn = () => {
   });
 };
 
-const appID = myRequestGet.createAppId(invAPIurl)
+const renderComments = (id) => {
+  const container = document.getElementById('modalMain')
+  container.insertAdjacentHTML('beforeend', `
+    <div>
+      <p>Comments</p>
+      <ul id='myComments'>
+      </ul>
+    </div>
+  `)
+  populateComments(id);
+};
+
+const populateComments = (id) => {
+  myRequestGet.getComments(id).then((value) => {
+    if (value) {
+      value.forEach(element => {
+        const ul = document.querySelector('#myComments')
+        const li = document.createElement('li')
+        li.innerHTML = `${element.creation_date} ${element.username}: ${element.comment}`
+        ul.appendChild(li)
+      });
+      console.log(value)      
+    } else if (value.error.status >= 400) {
+      const ul = document.querySelector('#myComments')
+      const li = document.createElement('li')
+      li.textContent = 'Be the firstone to comment!'
+      ul.appendChild(li)
+    }
+  })
+
+}
+
+const postComent = () => {
+  const form = document.getElementById('addComment')
+  form.addEventListener('submit', (e) => {
+    e.preventDefault()
+    let id = e.target.parentElement.id
+    let user = e.target.elements.user.value
+    let body = e.target.elements.comment.value
+    myRequestGet.postComments(id, user, body)
+    e.target.elements.user.value = ''
+    e.target.elements.comment.value = ''
+  } )
+
+}
 
 
 const commentEvent = () => {
