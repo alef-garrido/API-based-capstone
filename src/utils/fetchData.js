@@ -1,10 +1,8 @@
 /* eslint-disable consistent-return */
 export default class myRequestGet {
   constructor() {
-
     this.appID = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/KUcXNh15Xp4XOwHZwJel/';
     this.submitComment = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/KUcXNh15Xp4XOwHZwJel/comments';
-
   }
 
   static getAll = async (url, member = null) => {
@@ -82,4 +80,3 @@ export default class myRequestGet {
     }
   }
 }
-
