@@ -33,7 +33,7 @@ export default class myRequestGet {
       const comments = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/KUcXNh15Xp4XOwHZwJel/comments?item_id=${id}`)
       .then(response => response.json())
       .then((response) => response)
-      .catch(err => console.error(err))
+      .catch(err => err)
 
       return comments;
   }

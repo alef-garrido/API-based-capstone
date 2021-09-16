@@ -37,7 +37,7 @@ const renderModal = (id) => {
     `);
     closeBtn();
     populateComments(`${value.id}`);
-    postComent();
+    postComment();
   });
  
 };
@@ -54,25 +54,25 @@ const closeBtn = () => {
 
 const populateComments = (id) => {
   myRequestGet.getComments(id).then((value) => {
-    if (value) {
+    console.log(value)
+    if (value.length >= 1) {
       value.forEach(element => {
         const ul = document.querySelector('#myComments')
         const li = document.createElement('li')
         li.innerHTML = `${element.creation_date} ${element.username}: ${element.comment}`
         ul.appendChild(li)
-      });
-      console.log(value)      
-    } else if (value.error.status >= 400) {
+      }); 
+    } else if (value.error.status >= 400 ) {
       const ul = document.querySelector('#myComments')
       const li = document.createElement('li')
-      li.textContent = 'Be the firstone to comment!'
+      li.textContent = 'Be the first one to comment!'
       ul.appendChild(li)
     }
   })
 
 }
 
-const postComent = () => {
+const postComment = () => {
   const form = document.getElementById('addComment')
   form.addEventListener('submit', (e) => {
     e.preventDefault()
@@ -82,8 +82,13 @@ const postComent = () => {
     myRequestGet.postComments(id, user, body)
     e.target.elements.user.value = ''
     e.target.elements.comment.value = ''
-  } )
+    updateCommentList(id)
+  })  
+}
 
+const updateCommentList = (id) => {
+  document.querySelector('#myComments').innerHTML = ''
+  populateComments(id)
 }
 
 
