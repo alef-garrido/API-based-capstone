@@ -1,10 +1,10 @@
 /* eslint-disable consistent-return */
 export default class myRequestGet {
   constructor() {
-    this.appID =
-      "https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/KUcXNh15Xp4XOwHZwJel/";
-    this.submitComment =
-      "https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/KUcXNh15Xp4XOwHZwJel/comments";
+
+    this.appID = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/KUcXNh15Xp4XOwHZwJel/';
+    this.submitComment = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/KUcXNh15Xp4XOwHZwJel/comments';
+
   }
 
   static getAll = async (url, member = null) => {
@@ -41,19 +41,45 @@ export default class myRequestGet {
   };
 
   static postComments = async (id, user, text) => {
-    await fetch(
-      "https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/KUcXNh15Xp4XOwHZwJel/comments",
-      {
-        method: "POST",
+    await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/KUcXNh15Xp4XOwHZwJel/comments', {
+      method: 'POST',
+      body: JSON.stringify({
+        item_id: id,
+        username: user,
+        comment: text,
+      }),
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+    });
+  }
+
+  static getLikes = async (url) => {
+    try {
+      const charsData = await fetch(url)
+        .then((res) => res.json())
+        .then((data) => data);
+
+      return charsData;
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
+  static postLike = async (url, charId) => {
+    try {
+      return await fetch(url, {
+        method: 'POST',
         body: JSON.stringify({
-          item_id: id,
-          username: user,
-          comment: text,
+          item_id: charId,
         }),
         headers: {
-          "Content-type": "application/json; charset=UTF-8",
+          'Content-type': 'application/json; charset=UTF-8',
         },
-      }
-    );
-  };
+      });
+    } catch (err) {
+      console.error(err);
+    }
+  }
 }
+
