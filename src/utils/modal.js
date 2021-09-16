@@ -52,7 +52,6 @@ const closeBtn = () => {
 
 const populateComments = (id) => {
   myRequestGet.getComments(id).then((value) => {
-    console.log(value);
     if (value.length >= 1) {
       value.forEach((element) => {
         const ul = document.querySelector('#myComments');
