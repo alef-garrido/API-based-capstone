@@ -198,3 +198,11 @@ nav > div {
 footer {
   background-color: rgb(0, 0, 0);
 }
+
+.like-btn:active {
+  transform: translateY(4px);
+}
+
+.like-btn:hover {
+  color: aqua;
+}
