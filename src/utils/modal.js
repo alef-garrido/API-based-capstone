@@ -55,16 +55,15 @@ const closeBtn = () => {
 const populateComments = (id) => {
   myRequestGet.getComments(id).then((value) => {
     // display title
-
-    const commentsCount = value.length;
     const ul = document.querySelector('#myComments');
+    const commentsCount = value.length;
     const title = document.createElement('h5');
     if (commentsCount === undefined) {
       title.textContent = 'Comments (0)';
-      ul.insertAdjacentElement('beforebegin', title);
+      ul.insertAdjacentElement('afterbegin', title);
     } else {
       title.textContent = `Comments (${commentsCount})`;
-      ul.insertAdjacentElement('beforebegin', title);
+      ul.insertAdjacentElement('afterbegin', title);
     }
 
     // display comments list
