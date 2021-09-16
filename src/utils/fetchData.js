@@ -28,9 +28,7 @@ export default class myRequestGet {
   };
 
   static getComments = async (id) => {
-    const comments = await fetch(
-      `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/KUcXNh15Xp4XOwHZwJel/comments?item_id=${id}`
-    )
+    const comments = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/KUcXNh15Xp4XOwHZwJel/comments?item_id=${id}`)
       .then((response) => response.json())
       .then((response) => response)
       .catch((err) => err);
