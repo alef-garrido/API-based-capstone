@@ -25,4 +25,9 @@ describe('Testing comments counter function', () => {
 
     expect(count).toBe(7);
   });
+
+  test('title should be define displaying count', () => {
+    const title = document.getElementById('commentsTitle')
+    expect(title.textContent).toMatch("Comments (7)")
+  })
 });

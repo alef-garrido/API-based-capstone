@@ -56,6 +56,7 @@ const commentCounter = (arr) => {
     const count = arr.length
     const ul = document.querySelector('#myComments');
     const title = document.createElement('h5');
+    title.id = 'commentsTitle'
     if (arr === undefined) {
       title.textContent = 'Comments (0)';
       ul.insertAdjacentElement('afterbegin', title);
