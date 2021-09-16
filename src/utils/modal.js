@@ -78,10 +78,12 @@ const postComment = () => {
     const { id } = e.target.parentElement;
     const user = e.target.elements.user.value;
     const body = e.target.elements.comment.value;
-    myRequestGet.postComments(id, user, body);
-    e.target.elements.user.value = '';
-    e.target.elements.comment.value = '';
-    updateCommentList(id);
+    myRequestGet.postComments(id, user, body)
+      .then(() => {
+        e.target.elements.user.value = '';
+        e.target.elements.comment.value = '';
+        updateCommentList(id);
+      });
   });
 };
 
