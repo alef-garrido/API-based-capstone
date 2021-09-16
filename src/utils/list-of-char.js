@@ -39,8 +39,7 @@ const renderCharacters = async () => {
     .then((result) => {
       result.forEach((element) => {
         const likeBtn = document.getElementById(`like-btn-${element.id}`);
-        const updateCount = document.getElementById(`likes-char-${element.id}`);
-        likeBtn.addEventListener('click', () => { 
+        likeBtn.addEventListener('click', () => {
           myRequestGet.postLike('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/KUcXNh15Xp4XOwHZwJel/likes', element.id).then(() => myRequestGet.getLikes('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/KUcXNh15Xp4XOwHZwJel/likes').then((likesArray) => {
             likesArray.forEach((item) => {
               const likesChar = document.getElementById(`likes-char-${item.item_id}`);
