@@ -55,6 +55,7 @@ const closeBtn = () => {
 const populateComments = (id) => {
   myRequestGet.getComments(id).then((value) => {
     // display title
+
     const commentsCount = value.length;
     const ul = document.querySelector('#myComments');
     const title = document.createElement('h5');
@@ -65,7 +66,9 @@ const populateComments = (id) => {
       title.textContent = `Comments (${commentsCount})`;
       ul.insertAdjacentElement('beforebegin', title);
     }
-    //display comments list
+
+    // display comments list
+
     if (value.length >= 1) {
       value.forEach((element) => {
         const li = document.createElement('li');
