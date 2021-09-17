@@ -195,6 +195,20 @@ nav > div {
   justify-content: space-around;
 }
 
+form {
+  display: flex;
+  flex-direction: column;
+}
+form > textarea {
+  height: 7em;
+  margin: .5em 0;
+}
+input[type='submit'] {
+  background: black;
+  color: #19f0de;
+}
+
+
 /* footer */
 footer {
   background-color: rgb(0, 0, 0);
