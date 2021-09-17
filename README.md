@@ -13,7 +13,7 @@
 
 ## Project Description (Loom Video)
 
-Check out the [video](./docs/project-video.mp4)
+Check out the [video](https://drive.google.com/file/d/1FIM3EQVa6xKtGcUa-CLj4ALGnYswZy2G/view?usp=sharing)
 
 
 ## Getting Started
