@@ -13,7 +13,7 @@
 
 ## Project Description (Loom Video)
 
-Check out the [video](https://livedemo.com)
+Check out the [video](./docs/project-video.mp4)
 
 
 ## Getting Started
