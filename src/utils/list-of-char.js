@@ -1,4 +1,5 @@
 import myRequestGet from './fetchData';
+import itemsCounter from './counter';
 
 const listOfChar = document.getElementById('list-of-char');
 
@@ -8,6 +9,7 @@ const renderCharacters = async () => {
   }).then((resp) => resp.json())
     .then((json) => json.results)
     .then((result) => {
+      itemsCounter(result);
       result.forEach((element) => {
         const li = document.createElement('li');
         listOfChar.appendChild(li);
