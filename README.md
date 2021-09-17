@@ -1,7 +1,7 @@
+![](https://img.shields.io/badge/Microverse-blueviolet)
 # API-based-capstone
 
 > API-based webApplication that displays a list of characters from the tv-show Rick &amp; Morty. 
-![](https://img.shields.io/badge/Microverse-blueviolet)
 
 ![screenshot TBA](./app_screenshot.png)
 
