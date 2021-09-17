@@ -3,7 +3,7 @@
 
 > API-based webApplication that displays a list of characters from the tv-show Rick &amp; Morty. 
 
-![screenshot TBA](./app_screenshot.png)
+![screenshot](./docs/screen1.PNG)
 
 ## Built With
 
@@ -11,9 +11,9 @@
 - Webpack
 - Jest
 
-## Live Demo
+## Project Description (Loom Video)
 
-[Live Demo Link TBA](https://livedemo.com)
+Check out the [video](https://livedemo.com)
 
 
 ## Getting Started
