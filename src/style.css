@@ -81,7 +81,8 @@ nav > div {
 }
 
 #navigation {
-  margin: 3em 2em;
+  padding: 1em 2em;
+  margin-bottom: 2em;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -146,7 +147,7 @@ nav > div {
 }
 
 #modalMain {
-  width: 30%;
+  width: 60%;
   height: 90%;
   margin: 60px auto;
   padding: 1em;
