@@ -9,23 +9,18 @@
   <title>Rick and Morty App</title>
 <script defer src="main.js"></script></head>
 <body>
-  <nav>
+  <header>
     <div id="navigation">
       <div id="pageLogo">
       </div>
-      <div >
-        <ul id='pages'>
-          <li>Characters (#)</li>
-          <li>item 2</li>
-          <li>item 3</li>
-        </ul>
+      <div id='pages'>      
+          <p class="text-center text-info mb-4">
+            <span class="bg-dark border-info border-3 py-2 px-2 rounded-start">Characters: </span>
+            <span class="bg-dark border-info border-3 py-2 px-2 rounded-end" id="number-of-chars"></span>
+          </p>
       </div>
     </div>
-    <p class="text-center text-info mb-4">
-      <span class="bg-dark border-info border-3 py-2 px-2 rounded-start">Characters: </span>
-      <span class="bg-dark border-info border-3 py-2 px-2 rounded-end" id="number-of-chars"></span>
-    </p>
-  </nav>
+  </header>
   <div id="container-list">
     <ul id="list-of-char" role='list'></ul>
   </div>
