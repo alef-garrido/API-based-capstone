@@ -114,4 +114,4 @@ const commentEvent = () => {
   });
 };
 
-export default commentEvent;
+export { commentEvent };
