@@ -52,22 +52,25 @@ const closeBtn = () => {
   });
 };
 
+const commentCounter = (arr) => {
+  const count = arr.length;
+  const ul = document.querySelector('#myComments');
+  const title = document.createElement('h5');
+  title.id = 'commentsTitle';
+  if (arr === undefined) {
+    title.textContent = 'Comments (0)';
+    ul.insertAdjacentElement('afterbegin', title);
+  } else {
+    title.textContent = `Comments (${count})`;
+    ul.insertAdjacentElement('afterbegin', title);
+  }
+  return count;
+};
+
 const populateComments = (id) => {
+  const ul = document.querySelector('#myComments');
   myRequestGet.getComments(id).then((value) => {
-    // display title
-    const ul = document.querySelector('#myComments');
-    const commentsCount = value.length;
-    const title = document.createElement('h5');
-    if (commentsCount === undefined) {
-      title.textContent = 'Comments (0)';
-      ul.insertAdjacentElement('afterbegin', title);
-    } else {
-      title.textContent = `Comments (${commentsCount})`;
-      ul.insertAdjacentElement('afterbegin', title);
-    }
-
-    // display comments list
-
+    commentCounter(value);
     if (value.length >= 1) {
       value.forEach((element) => {
         const li = document.createElement('li');
@@ -114,4 +117,4 @@ const commentEvent = () => {
   });
 };
 
-export default commentEvent;
+export { commentEvent, commentCounter };
