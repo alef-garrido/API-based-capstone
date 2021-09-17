@@ -9,6 +9,7 @@ const renderCharacters = async () => {
   }).then((resp) => resp.json())
     .then((json) => json.results)
     .then((result) => {
+      console.log(result)
       itemsCounter(result);
       result.forEach((element) => {
         const li = document.createElement('li');
