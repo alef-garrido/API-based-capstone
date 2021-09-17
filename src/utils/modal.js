@@ -117,6 +117,4 @@ const commentEvent = () => {
   });
 };
 
-
 export { commentEvent, commentCounter };
-
