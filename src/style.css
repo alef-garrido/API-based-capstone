@@ -199,10 +199,12 @@ form {
   display: flex;
   flex-direction: column;
 }
+
 form > textarea {
   height: 7em;
-  margin: .5em 0;
+  margin: 0.5em 0;
 }
+
 input[type='submit'] {
   background: black;
   color: #19f0de;
